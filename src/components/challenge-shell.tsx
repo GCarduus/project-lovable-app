@@ -45,7 +45,7 @@ export function ChallengeShell({ children, title }: { children: ReactNode; title
             const active = item.to === "/create" ? pathname === "/create" : pathname === "/" && item.label === "Início";
             const Icon = item.icon;
             return (
-              <Link key={item.label} to={item.to} aria-current={active ? "page" : undefined} className={`group flex h-full flex-col items-center justify-center gap-1 text-[11px] font-bold transition-colors ${active ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}>
+              <Link key={item.label} to={item.create ? "/create" : "/"} aria-current={active ? "page" : undefined} className={`group flex h-full flex-col items-center justify-center gap-1 text-[11px] font-bold transition-colors ${active ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}>
                 {item.create ? (
                   <span className="-mt-5 grid size-12 place-items-center rounded-2xl bg-primary text-primary-foreground shadow-action transition-transform group-hover:-translate-y-0.5"><Icon className="size-6" /></span>
                 ) : <Icon className={`size-5 ${active ? "fill-primary/15" : ""}`} />}

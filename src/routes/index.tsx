@@ -37,6 +37,11 @@ const popular = [
   ["Nutrição & Bem-estar 🥑", "Café da Manhã Saudável", "Poste a foto do seu café nutritivo todo dia e ganhe energia extra em grupo.", "Nutri-Rotina", "+250 XP", "20"],
   ["Idiomas & Estudos 🌍", "1 Lição de Idioma por Dia", "Pelo menos 10 minutos de prática com seu app de idiomas favorito.", "Poliglota", "+400 XP", "16"],
 ] as const;
+const stats = [
+  { icon: Zap, title: "Nível 8", sub: "1.420 XP", className: "bg-lavender text-primary" },
+  { icon: Flame, title: "14 Dias", sub: "Fogo Ativo 🔥", className: "bg-streak-soft text-streak" },
+  { icon: Trophy, title: "6 Ativos", sub: "18 Concluídos", className: "bg-gold-soft text-streak" },
+];
 
 function Home() {
   return <ChallengeShell>
@@ -57,7 +62,7 @@ function Home() {
       </section>
 
       <section className="my-4 grid grid-cols-3 gap-2">
-        {[ [Zap,"Nível 8","1.420 XP","bg-lavender text-primary"], [Flame,"14 Dias","Fogo Ativo 🔥","bg-streak-soft text-streak"], [Trophy,"6 Ativos","18 Concluídos","bg-gold-soft text-streak"] ].map(([Icon,title,sub,cls]) => <div key={String(title)} className="rounded-xl bg-surface p-3 shadow-sm"><div className={`mb-2 grid size-8 place-items-center rounded-lg ${cls}`}><Icon className="size-4" /></div><p className="text-sm font-black">{title}</p><p className="text-[10px] font-bold text-muted-foreground">{sub}</p></div>)}
+        {stats.map(({icon: Icon,title,sub,className}) => <div key={title} className="rounded-xl bg-surface p-3 shadow-sm"><div className={`mb-2 grid size-8 place-items-center rounded-lg ${className}`}><Icon className="size-4" /></div><p className="text-sm font-black">{title}</p><p className="text-[10px] font-bold text-muted-foreground">{sub}</p></div>)}
       </section>
 
       <Link to="/create" className="mb-7 flex items-center gap-3 rounded-xl border border-primary/15 bg-primary-soft p-4 text-primary transition-transform hover:-translate-y-0.5"><span className="grid size-10 place-items-center rounded-xl bg-primary text-primary-foreground"><Plus /></span><span className="flex-1"><b className="block text-sm">+ Criar Novo Desafio</b><span className="text-xs text-muted-foreground">Desafie sua turma agora mesmo!</span></span><ArrowRight /></Link>
