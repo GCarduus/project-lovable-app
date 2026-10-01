@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Bell, Flame, Home, Plus, Trophy, UserRound, Users } from "lucide-react";
 
-const logo = "https://lh3.googleusercontent.com/aida/AEtjO1URH_YWxuXiI_Xugsl2-g5He6Ydqfuc8bUD3G8wfEFiRioFI8X7KVcfIB7Onp531erzYyCv_MY8w-S3RcRRDRsaR-EY4T8brVeaVNIHF9cnMtANA38ck84N840589iiMQvT0P3gFXSj5VqqDtmp181OWRcdRCwVBdkJoVREkSzjJjAKDngmx2KNBpmPNabBTnzmhGvQNOajokJvf3Z5SjRW2NZSziTWZdVHuREU4SxDpVsIZKbGEblrbls";
 const profile = "https://lh3.googleusercontent.com/aida-public/AB6AXuAil8coIckIbQl6c5s_j98BcfphQ6YTgcCdgaJ3kw952U7xOwRojS9PtVeZGBA3V5Gn-de0ZnCYUSdB7hvgGkWedUteRlENoVy7A9XlEEMOO2HQ7-S3gREd5EOxDe9vaOICUS3xhujXH2JVDP449HP1uzdwCxEHePxtM3FRyAtlQrp_K4Z2u4uPte_rtpUeipU9cpYfckhKtZeekz42gCwKwb4KcUrTywpFlMLtrzxM_xkxWwYtZC6U";
 
 const items = [
@@ -20,7 +19,7 @@ export function ChallengeShell({ children, title }: { children: ReactNode; title
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-surface/90 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6">
           <Link to="/" aria-label="Challenge — início" className="flex items-center gap-2">
-            <img src={logo} alt="Challenge" className="h-9 w-9 rounded-xl object-cover" />
+            <span className="grid size-9 place-items-center rounded-xl bg-coral text-coral-foreground shadow-sm"><Trophy className="size-5" /></span>
             <span className="hidden text-lg font-extrabold sm:block">Challenge</span>
           </Link>
           <span className="text-sm font-extrabold text-foreground sm:text-base">{title ?? "Início"}</span>
